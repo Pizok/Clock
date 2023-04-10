@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+
+:root{
+    font-size: 16px;
+}
+
+body {
+    background-image: url(/Asset/space-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#main {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+}
+
+#lm {
+    font-weight: 600;
+    font-size: 200px;
+    margin: 0 50px 50px 50px;
+}
+
+#Copyright {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    color: azure;
+}

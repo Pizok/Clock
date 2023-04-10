@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div id="main">
+        <section id="time">
+            <p id="lm"></p>
+        </section>
+    </div>
+    <footer id="Copyright">
+        <p>Copyright © <span id="year"></span> Ilham R</p>
+    </footer>
+
+    <script>
+        let time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        document.getElementById("lm").innerHTML = time;
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+
+        function Time() {
+
+                // Creating object of the Date class
+                var date = new Date();
+
+                // Get current hour
+                var hour = date.getHours();
+                // Get current minute
+                var minute = date.getMinutes();
+
+                // Variable to store AM / PM
+                var period = "";
+
+                // Assigning AM / PM according to the current hour
+                if (hour >= 12) {
+                    period = "PM";
+                } else {
+                    period = "AM";
+                }
+
+                // Converting the hour in 12-hour format
+                if (hour == 0) {
+                    hour = 12;
+                } else {
+                    if (hour > 12) {
+                        hour = hour - 12;
+                    }
+                }
+
+                // Updating hour, minute, and second
+                // if they are less than 10
+                hour = update(hour);
+                minute = update(minute);
+
+                // Adding time elements to the div
+                document.getElementById("lm").innerText = hour + " : " + minute + " " + period;
+
+                // Set Timer to 1 sec (1000 ms)
+                setTimeout(Time, 1000);
+            }
+
+            // Function to update time elements if they are less than 10
+            // Append 0 before time elements if they are less than 10
+            function update(t) {
+                if (t < 10) {
+                    return "0" + t;
+                }
+                else {
+                    return t;
+                }
+            }
+
+            Time();
+    </script>
+</body>
+</html>
